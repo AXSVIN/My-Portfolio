@@ -57,7 +57,7 @@
             <h1 >Hello <span id="redcolor">,</span><br><br>I'm <spam id="redcolor" >Ashwin Raja M </spam ><br><br><span id="changeText">Full Stack Developer</span><br></h1>
           </div>
           <div class="col fade-left">
-            <img class="img-fluid  " src="ashwin.jpeg" alt="" style="padding-left: 40px; height: 90%;width: 90%;">
+            <img class="img-fluid  " src="ashwin.jpeg" alt="" style="padding-left: 40px; height: 90%;width: 90%; margin-top: -10px;">
           </div>
         </div>
     </div><br><br>
@@ -202,6 +202,20 @@
                   </div>
                 </div>
              </div>
+
+
+             <div class="col-md-4 hidden con fade-left">
+              <img src="pj5.jpeg" alt="Image 3" class="img-fluid">
+              <div class="overlay">
+               <div class="text">
+                 <h2><b>Scalex</b></h2>
+                 <h4>Company Design</h4>
+                 <a style="color: black;" href="https://www.linkedin.com/posts/ashwin-raja-m-6baa351a8_fullstackdeveloper-frontenddeveloper-backenddeveloper-activity-7149994857573330944-rYPB?utm_source=share&utm_medium=member_desktop"><i class="fa fa-linkedin-square fa-2x  mb-3" ></i></a>&ensp;
+                 <a style="color: black;" href="https://github.com/AXSVIN/scalex-assignment"><i class="fa fa-github-square fa-2x  mb-3" ></i></a>&ensp;
+                 <a style="color: black;" href="https://axsvin.github.io/scalex-assignment/"><i class="fa fa-external-link fa-2x  mb-3" ></i></a>
+               </div>
+             </div>
+          </div>
              <!-- Add more hidden images as needed -->
          </div>
        
@@ -273,14 +287,15 @@
       const form = document.forms['submit-to-google-sheet']
       const msg= document.getElementById("msg")
     
-      form.addEventListener('submit', e => {
+      form.addEventListener('submit', e => 
+      {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           .then(response => {
             msg.innerHTML="Message Sent Successfully"
             setTimeout(function(){
               msg.innerHTML=""
-            },1000)
+            },500)
             form.reset();
           })
           .catch(error => console.error('Error!', error.message))
