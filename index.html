@@ -146,17 +146,1249 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.4);
         }
+
+        /* New Experience Card Styles */
+        .experience-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+            border: 1px solid #e0f2fe;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(14, 165, 233, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .timeline-dot {
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+        }
+
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .achievement-item {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .achievement-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* NEW: Floating Shapes Animation */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* NEW: Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* NEW: Gradient Text Animation */
+        .gradient-text-animated {
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6, #0ea5e9);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        /* NEW: Card Hover Lift Effect */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+        }
+
+        /* NEW: Skill Progress Bar */
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+            border-radius: 4px;
+            transition: width 1.5s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.3),
+                transparent
+            );
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* NEW: Badge Styles */
+        .badge-new {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(14, 165, 233, 0.3);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* NEW: Decorative Blobs */
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            opacity: 0.4;
+            z-index: -1;
+        }
+        .blob-1 {
+            top: 10%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: #bae6fd;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 8s ease-in-out infinite;
+        }
+        .blob-2 {
+            bottom: 10%;
+            right: -10%;
+            width: 350px;
+            height: 350px;
+            background: #e0f2fe;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite reverse;
+        }
+        @keyframes morph {
+            0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* NEW: Stats Counter Animation */
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* NEW: Timeline Connector */
+        .timeline-connector {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #0ea5e9, transparent);
+        }
+
+        /* NEW: Image Frame Effect */
+        .image-frame {
+            position: relative;
+            padding: 1rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6, #0ea5e9);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* NEW: Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce-scroll 2s infinite;
+        }
+        @keyframes bounce-scroll {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* NEW: Tech Stack Icons Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+        }
+        .tech-item {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .tech-item:hover {
+            border-color: #0ea5e9;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+        }
+
+        /* NEW: Achievement Card Flip */
+        .flip-card {
+            perspective: 1000px;
+            height: 200px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            color: white;
+        }
+
+        /* NEW: Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #0ea5e9, #3b82f6);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7;
+        }
+
+        /* NEW: Loading Skeleton Animation */
+        @keyframes skeleton-loading {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+
+        /* NEW: Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-left: 4px solid #0ea5e9;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* NEW: Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #0ea5e9;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particle-float 20s infinite linear;
+        }
+        @keyframes particle-float {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+
+        /* NEW: Magnetic Button Effect */
+        .magnetic-btn {
+            transition: transform 0.2s ease;
+        }
+
+        /* NEW: Text Reveal Animation */
+        .reveal-text {
+            overflow: hidden;
+        }
+        .reveal-text span {
+            display: inline-block;
+            transform: translateY(100%);
+            animation: reveal 0.8s cubic-bezier(0.5, 0, 0, 1) forwards;
+        }
+        @keyframes reveal {
+            to { transform: translateY(0); }
+        }
+
+        /* NEW: Gradient Border */
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6, #8b5cf6);
+            border-radius: 18px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+
+        /* NEW: Wave Separator */
+        .wave-separator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-separator svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+        .wave-separator .shape-fill {
+            fill: #ffffff;
+        }
+
+        /* NEW: Code Window Style */
+        .code-window {
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .code-header {
+            background: #334155;
+            padding: 0.75rem 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .code-content {
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            color: #e2e8f0;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .code-keyword { color: #c084fc; }
+        .code-string { color: #4ade80; }
+        .code-function { color: #60a5fa; }
+        .code-comment { color: #64748b; }
+
+        /* NEW: Profile Badge */
+        .profile-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: pulse-badge 2s infinite;
+        }
+        @keyframes pulse-badge {
+            0%, 100% { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+            50% { box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4); }
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* NEW: Service Card Stack */
+        .service-stack {
+            perspective: 1000px;
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateZ(20px) rotateX(-5deg);
+        }
+
+        /* NEW: Testimonial Marquee */
+        .marquee-container {
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        /* NEW: Counter Stats */
+        .counter-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            transition: all 0.3s ease;
+        }
+        .counter-box:hover {
+            transform: translateY(-5px);
+            border-color: #0ea5e9;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
+        }
+
+        /* NEW: Ribbon Corner */
+        .ribbon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            z-index: 1;
+            overflow: hidden;
+            width: 100px;
+            height: 100px;
+        }
+        .ribbon span {
+            position: absolute;
+            top: 20px;
+            right: -20px;
+            width: 130px;
+            transform: rotate(45deg);
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            color: white;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 5px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* NEW: Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        .fab:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+        }
+
+        /* NEW: Spotlight Effect */
+        .spotlight {
+            position: relative;
+            overflow: hidden;
+        }
+        .spotlight::before {
+            content: '';
+            position: absolute;
+            top: var(--y, 50%);
+            left: var(--x, 50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .spotlight:hover::before {
+            opacity: 1;
+        }
+
+        /* NEW: Typewriter Cursor */
+        .typewriter::after {
+            content: '|';
+            animation: blink-cursor 1s infinite;
+        }
+        @keyframes blink-cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* NEW: Glowing Border */
+        .glow-border {
+            position: relative;
+        }
+        .glow-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #0ea5e9, #3b82f6, #8b5cf6, #0ea5e9);
+            border-radius: inherit;
+            z-index: -1;
+            background-size: 400%;
+            animation: glow 3s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .glow-border:hover::before {
+            opacity: 1;
+        }
+        @keyframes glow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* NEW: Card Tilt Effect */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        .tilt-content {
+            transform: translateZ(20px);
+        }
+
+        /* NEW: Animated Background Grid */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+            animation: grid-move 20s linear infinite;
+        }
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(40px, 40px); }
+        }
+
+        /* NEW: Success Checkmark */
+        .checkmark {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            box-shadow: inset 0px 0px 0px #22c55e;
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+        }
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #22c55e;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+        @keyframes stroke {
+            100% { stroke-dashoffset: 0; }
+        }
+        @keyframes scale {
+            0%, 100% { transform: none; }
+            50% { transform: scale3d(1.1, 1.1, 1); }
+        }
+        @keyframes fill {
+            100% { box-shadow: inset 0px 0px 0px 30px #22c55e; }
+        }
+
+        /* NEW: Hero Image Float Animation */
+        .hero-float {
+            animation: hero-float 6s ease-in-out infinite;
+        }
+        @keyframes hero-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* NEW: Experience Timeline Enhancement */
+        .experience-timeline-item {
+            position: relative;
+        }
+        .experience-timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #0ea5e9, transparent);
+            transform: translateX(-50%);
+        }
+
+        /* NEW: Skill Orb */
+        .skill-orb {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #bae6fd;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-orb::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .skill-orb:hover::before {
+            opacity: 1;
+        }
+        .skill-orb:hover {
+            transform: scale(1.1);
+            border-color: #0ea5e9;
+        }
+        .skill-orb i {
+            font-size: 1.5rem;
+            color: #0ea5e9;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+        }
+        .skill-orb:hover i {
+            color: white;
+        }
+
+        /* NEW: Project Card 3D Tilt */
+        .project-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+        }
+        .project-3d-content {
+            transform: translateZ(30px);
+        }
+
+        /* NEW: Contact Form Floating Labels */
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .form-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: transparent;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        .form-input:focus {
+            border-color: #0ea5e9;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+        .form-label {
+            position: absolute;
+            left: 3rem;
+            top: 1rem;
+            color: #94a3b8;
+            pointer-events: none;
+            transition: all 0.3s;
+            background: white;
+            padding: 0 0.25rem;
+        }
+        .form-input:focus ~ .form-label,
+        .form-input:not(:placeholder-shown) ~ .form-label {
+            top: -0.5rem;
+            left: 1rem;
+            font-size: 0.875rem;
+            color: #0ea5e9;
+        }
+        .form-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+        .form-input:focus ~ .form-icon {
+            color: #0ea5e9;
+        }
+
+        /* NEW: Navigation Glass Effect */
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* NEW: Section Divider */
+        .section-divider {
+            height: 100px;
+            background: linear-gradient(to right bottom, transparent 49%, #f0f9ff 50%);
+        }
+        .section-divider-reverse {
+            height: 100px;
+            background: linear-gradient(to left bottom, transparent 49%, #ffffff 50%);
+        }
+
+        /* NEW: Interactive Map Placeholder */
+        .map-container {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        .map-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #0ea5e9;
+            border-radius: 50%;
+            animation: map-pulse 2s infinite;
+        }
+        @keyframes map-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(14, 165, 233, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+        }
+
+        /* NEW: Loading Spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e2e8f0;
+            border-top-color: #0ea5e9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* NEW: Tooltip */
+        .tooltip {
+            position: relative;
+        }
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-5px);
+            padding: 0.5rem 1rem;
+            background: #1e293b;
+            color: white;
+            font-size: 0.875rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        .tooltip:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* NEW: Progress Ring */
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 1s ease-in-out;
+        }
+
+        /* NEW: Image Comparison Slider */
+        .img-compare {
+            position: relative;
+            overflow: hidden;
+        }
+        .img-compare-slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: white;
+            cursor: ew-resize;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        /* NEW: Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+        .accordion-icon {
+            transition: transform 0.3s;
+        }
+        .accordion.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* NEW: Parallax Container */
+        .parallax-container {
+            perspective: 1px;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        .parallax-back {
+            transform: translateZ(-1px) scale(2);
+        }
+
+        /* NEW: Sticky Card */
+        .sticky-card {
+            position: sticky;
+            top: 100px;
+        }
+
+        /* NEW: Morphing SVG */
+        .morph-svg {
+            animation: morph-svg 8s ease-in-out infinite;
+        }
+        @keyframes morph-svg {
+            0%, 100% { d: path("M440,320Q400,390,320,420Q240,450,160,400Q80,350,60,260Q40,170,100,100Q160,30,260,20Q360,10,420,80Q480,150,480,235Q480,320,440,320Z"); }
+            50% { d: path("M420,310Q380,380,300,410Q220,440,150,380Q80,320,70,230Q60,140,120,80Q180,20,280,30Q380,40,430,110Q480,180,470,265Q460,350,420,310Z"); }
+        }
+
+        /* NEW: Text Scramble Effect */
+        .scramble-text {
+            font-family: monospace;
+        }
+
+        /* NEW: Liquid Button */
+        .liquid-btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .liquid-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            z-index: -1;
+        }
+        .liquid-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* NEW: Gradient Mesh Background */
+        .gradient-mesh {
+            background: 
+                radial-gradient(at 40% 20%, hsla(200,100%,74%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(340,100%,76%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, hsla(200,100%,70%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(220,100%,77%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, hsla(200,100%,70%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, hsla(200,100%,76%,1) 0px, transparent 50%);
+            opacity: 0.1;
+        }
+
+        /* NEW: Card Stack */
+        .card-stack {
+            position: relative;
+        }
+        .card-stack-item {
+            position: absolute;
+            transition: all 0.5s ease;
+        }
+
+        /* NEW: Infinite Scroll */
+        .infinite-scroll {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* NEW: 3D Cube */
+        .cube-container {
+            perspective: 1000px;
+            width: 200px;
+            height: 200px;
+        }
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate-cube 10s infinite linear;
+        }
+        .cube-face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 2px solid #0ea5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #0ea5e9;
+        }
+        .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
+        .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(100px); }
+        .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(100px); }
+        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(100px); }
+        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(100px); }
+        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(100px); }
+        @keyframes rotate-cube {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        /* NEW: Neon Glow */
+        .neon-glow {
+            text-shadow: 
+                0 0 5px #0ea5e9,
+                0 0 10px #0ea5e9,
+                0 0 20px #0ea5e9,
+                0 0 40px #0ea5e9;
+        }
+
+        /* NEW: Paper Cut Effect */
+        .paper-cut {
+            position: relative;
+            background: white;
+            box-shadow: 
+                0 1px 1px rgba(0,0,0,0.15),
+                0 10px 0 -5px #eee,
+                0 10px 1px -4px rgba(0,0,0,0.15),
+                0 20px 0 -10px #eee,
+                0 20px 1px -9px rgba(0,0,0,0.15);
+        }
+
+        /* NEW: Isometric Grid */
+        .iso-grid {
+            transform: rotateX(60deg) rotateZ(-45deg);
+            transform-style: preserve-3d;
+        }
+        .iso-item {
+            transform: translateZ(20px);
+            transition: transform 0.3s;
+        }
+        .iso-item:hover {
+            transform: translateZ(40px);
+        }
+
+        /* NEW: Aurora Background */
+        .aurora {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .aurora-item {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(14, 165, 233, 0.1), transparent);
+            animation: aurora-move 10s infinite linear;
+        }
+        @keyframes aurora-move {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* NEW: Holographic Effect */
+        .holographic {
+            background: linear-gradient(
+                135deg,
+                rgba(255,255,255,0.4) 0%,
+                rgba(255,255,255,0.1) 50%,
+                rgba(255,255,255,0.4) 100%
+            );
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* NEW: Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confetti-fall 3s linear infinite;
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* NEW: SVG Draw Animation */
+        .draw-svg path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 2s ease forwards;
+        }
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* NEW: Mask Reveal */
+        .mask-reveal {
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            animation: mask-reveal 1s ease forwards;
+        }
+        @keyframes mask-reveal {
+            to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+
+        /* NEW: Split Text */
+        .split-char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: split-reveal 0.5s ease forwards;
+        }
+        @keyframes split-reveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* NEW: Magnetic Cursor */
+        .magnetic-area {
+            transition: transform 0.2s ease;
+        }
+
+        /* NEW: Image Reveal */
+        .img-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+        .img-reveal::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0ea5e9;
+            transform: translateX(-100%);
+            animation: img-reveal 1s ease forwards;
+        }
+        @keyframes img-reveal {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* NEW: Stagger Grid */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .stagger-item.visible {
+            animation: stagger-in 0.6s ease forwards;
+        }
+        @keyframes stagger-in {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* NEW: Liquid Background */
+        .liquid-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            filter: url(#goo);
+            opacity: 0.1;
+        }
+        .liquid-blob {
+            position: absolute;
+            background: #0ea5e9;
+            border-radius: 50%;
+            animation: liquid-move 20s infinite alternate;
+        }
+        @keyframes liquid-move {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, -100px) scale(1.5); }
+        }
     </style>
+<base target="_blank">
 </head>
 <body id="body" class="antialiased selection:bg-sky-200 selection:text-sky-900">
 
+    <!-- SVG Filters for Liquid Effect -->
+    <svg style="position: absolute; width: 0; height: 0;">
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+        </filter>
+    </svg>
+
+    <!-- NEW: Floating Action Button -->
+    <div class="fab" onclick="scrollToTop()" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- NEW: Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="flex items-center gap-3">
+            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+            <div>
+                <h4 class="font-bold text-slate-800">Success!</h4>
+                <p class="text-sm text-slate-600">Message sent successfully.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+    <nav class="sticky top-0 z-50 nav-glass shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Brand -->
-                <a href="#" class="flex items-center space-x-3 group">
-                    <div class="p-2 bg-sky-50 rounded-lg group-hover:bg-sky-100 transition-colors">
+                <a href="#" class="flex items-center space-x-3 group magnetic-area">
+                    <div class="p-2 bg-sky-50 rounded-lg group-hover:bg-sky-100 transition-colors glow-border">
                         <i class="fa fa-graduation-cap text-2xl text-primary-blue"></i>
                     </div>
                     <h2 class="text-xl font-bold text-slate-800 uppercase tracking-wider">
@@ -165,7 +1397,7 @@
                 </a>
 
                 <!-- Toggler (Mobile Menu Button) -->
-                <button id="menu-toggle" class="md:hidden text-slate-600 hover:text-primary-blue focus:outline-none p-2 rounded-md transition duration-150">
+                <button id="menu-toggle" class="md:hidden text-slate-600 hover:text-primary-blue focus:outline-none p-2 rounded-md transition duration-150 magnetic-area">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
@@ -173,64 +1405,279 @@
 
                 <!-- Navbar Links (Desktop) -->
                 <div class="hidden md:flex md:space-x-8 items-center">
-                    <a href="#" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors">Home</a>
-                    <a href="#about" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors">About</a>
-                    <a href="#skill" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors">Skills</a>
-                    <a href="#contact" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors">Contact</a>
-                    <a href="#project" class="text-white bg-primary-blue hover:bg-sky-600 px-5 py-2.5 rounded-full text-sm font-medium transition duration-300 shadow-lg shadow-sky-200">My Work</a>
+                    <a href="#" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors magnetic-area">Home</a>
+                    <a href="#about" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors magnetic-area">About</a>
+                    <a href="#skill" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors magnetic-area">Skills</a>
+                    <a href="#experience" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors magnetic-area">Experience</a>
+                    <a href="#contact" class="nav-link text-slate-600 hover:text-primary-blue font-medium text-sm py-2 transition-colors magnetic-area">Contact</a>
+                    <a href="#project" class="text-white bg-primary-blue hover:bg-sky-600 px-5 py-2.5 rounded-full text-sm font-medium transition duration-300 shadow-lg shadow-sky-200 liquid-btn magnetic-area">My Work</a>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-lg">
             <div class="px-4 pt-2 pb-4 space-y-1">
-                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue">Home</a>
-                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue">About</a>
-                <a href="#skill" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue">Skills</a>
-                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue">Contact</a>
-                <a href="#project" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue">Projects</a>
+                <a href="#" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue magnetic-area">Home</a>
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue magnetic-area">About</a>
+                <a href="#skill" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue magnetic-area">Skills</a>
+                <a href="#experience" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue magnetic-area">Experience</a>
+                <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue magnetic-area">Contact</a>
+                <a href="#project" class="block px-3 py-3 rounded-md text-base font-medium text-slate-600 hover:bg-sky-50 hover:text-primary-blue magnetic-area">Projects</a>
             </div>
         </div>
     </nav>
 
     <main>
         <!-- Home Section -->
-        <section id="home" class="min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-white to-sky-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <section id="home" class="min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-white to-sky-50 relative overflow-hidden">
+            <!-- NEW: Animated Background Elements -->
+            <div class="aurora">
+                <div class="aurora-item" style="animation-delay: 0s;"></div>
+                <div class="aurora-item" style="animation-delay: -5s;"></div>
+            </div>
+            
+            <!-- NEW: Floating Shapes -->
+            <div class="floating-shape w-64 h-64 bg-sky-300 top-20 left-10" style="animation-delay: 0s;"></div>
+            <div class="floating-shape w-48 h-48 bg-blue-300 bottom-20 right-20" style="animation-delay: 2s;"></div>
+            <div class="floating-shape w-32 h-32 bg-cyan-300 top-1/2 left-1/4" style="animation-delay: 4s;"></div>
+
+            <!-- NEW: Particles -->
+            <div class="particles" id="particles"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                 <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <!-- Text Content -->
                     <div class="fade-right order-2 md:order-1 text-center md:text-left">
-                        <div class="inline-block px-3 py-1 bg-sky-100 text-primary-blue rounded-full  text-sm font-semibold mb-6">Welcome to My Portfolio</div>
+                        <div class="inline-block px-4 py-2 bg-sky-100 text-primary-blue rounded-full text-sm font-semibold mb-6 hover-lift">
+                            <i class="fas fa-code mr-2"></i>Welcome to My Portfolio
+                        </div>
                         <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight text-slate-900 mb-6">
-                            Hello <span class="text-primary-blue">,</span><br>
-                            I'm <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">Ashwin Raja M</span>
+                            <span class="reveal-text"><span>Hello</span></span> <span class="text-primary-blue">,</span><br>
+                            <span class="reveal-text"><span>I'm</span></span> <br> 
+                            <span class="gradient-text-animated">Ashwin Raja M</span>
                         </h1>
                         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-500 h-12">
-                            <span id="changeText" class="text-dark-blue"></span>
+                            <span id="changeText" class="text-dark-blue typewriter"></span>
                         </h2>
+                        
+                        <!-- NEW: Quick Stats -->
+                        <div class="grid grid-cols-3 gap-4 mt-8 mb-8 max-w-md mx-auto md:mx-0">
+                            <div class="counter-box p-3 rounded-xl text-center hover-lift">
+                                <div class="stat-number" data-target="2">0</div>
+                                <p class="text-xs text-slate-600 font-medium">Years Exp.</p>
+                            </div>
+                            <div class="counter-box p-3 rounded-xl text-center hover-lift">
+                                <div class="stat-number" data-target="15">0</div>
+                                <p class="text-xs text-slate-600 font-medium">Projects</p>
+                            </div>
+                            <div class="counter-box p-3 rounded-xl text-center hover-lift">
+                                <div class="stat-number" data-target="10">0</div>
+                                <p class="text-xs text-slate-600 font-medium">Technologies</p>
+                            </div>
+                        </div>
+
                         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <a href="#contact" class="btn-primary-custom px-8 py-3 rounded-full font-semibold">Hire Me</a>
-                            <a href="#project" class="px-8 py-3 rounded-full font-semibold text-slate-600 border border-slate-300 hover:border-primary-blue hover:text-primary-blue transition-colors bg-white">View Projects</a>
+                            <a href="#contact" class="btn-primary-custom px-8 py-3 rounded-full font-semibold liquid-btn magnetic-area">
+                                <i class="fas fa-paper-plane mr-2"></i>Hire Me
+                            </a>
+                            <a href="#project" class="px-8 py-3 rounded-full font-semibold text-slate-600 border border-slate-300 hover:border-primary-blue hover:text-primary-blue transition-colors bg-white magnetic-area group">
+                                <i class="fas fa-eye mr-2 group-hover:animate-pulse"></i>View Projects
+                            </a>
+                        </div>
+
+                        <!-- NEW: Tech Stack Preview -->
+                        <div class="mt-8 flex items-center gap-4 justify-center md:justify-start">
+                            <span class="text-sm text-slate-500"></span>
+                            <div class="flex gap-3">
+                                <div class="skill-orb w-10 h-10 tooltip" data-tooltip="React">
+                                    <i class="fab fa-react text-lg">Mern</i>
+                                </div>
+                                <div class="skill-orb w-10 h-10 tooltip" data-tooltip="Node.js">
+                                    <i class="fab fa-node-js text-lg"></i>
+                                </div>
+                                <div class="skill-orb w-10 h-10 tooltip" data-tooltip="JavaScript">
+                                    <i class="fab fa-js text-lg"></i>
+                                </div>
+                                <div class="skill-orb w-10 h-10 tooltip" data-tooltip="HTML5">
+                                    <i class="fab fa-html5 text-lg"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                     <!-- Image -->
-                    <div class="fade-left order-1 md:order-2 flex justify-center">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-sky-200 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-                            <img class="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-full shadow-2xl border-4 border-white ring-4 ring-sky-100" 
-                                 src="ashwin.jpeg" 
-                                 alt="Ashwin Raja M Profile Photo"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/0ea5e9?text=Ashwin'"
-                            >
+                    <div class="fade-left order-1 md:order-2 flex justify-center relative">
+                        <!-- NEW: Decorative Elements -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-sky-200 to-blue-200 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                        
+                        <!-- NEW: 3D Cube Decoration -->
+                        <div class="absolute -top-10 -right-10 cube-container hidden lg:block opacity-50">
+                            <div class="cube">
+                                <div class="cube-face"><i class="fas fa-code"></i></div>
+                                <div class="cube-face"><i class="fas fa-database"></i></div>
+                                <div class="cube-face"><i class="fas fa-server"></i></div>
+                                <div class="cube-face"><i class="fas fa-laptop-code"></i></div>
+                                <div class="cube-face"><i class="fas fa-mobile-alt"></i></div>
+                                <div class="cube-face"><i class="fas fa-cloud"></i></div>
+                            </div>
                         </div>
+
+                        <div class="relative hero-float">
+                            <div class="image-frame">
+                                <img class="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-2xl shadow-2xl" 
+                                     src="ashwin.jpeg" 
+                                     alt="Ashwin Raja M Profile Photo"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/0ea5e9?text=Ashwin'"
+                                >
+                                <!-- NEW: Profile Badge -->
+                                <div class="profile-badge">
+                                    <div class="status-dot"></div>
+                                    <span class="text-sm font-semibold text-slate-700">Available for work</span>
+                                </div>
+                            </div>
+                            
+                            <!-- NEW: Floating Cards -->
+                            <div class="absolute -left-8 top-1/4 bg-white p-3 rounded-xl shadow-lg hover-lift hidden md:block animate-bounce" style="animation-duration: 3s;">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600 text-sm"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-700">Problem Solver</span>
+                                </div>
+                            </div>
+                            
+                            <div class="absolute -right-4 bottom-1/4 bg-white p-3 rounded-xl shadow-lg hover-lift hidden md:block animate-bounce" style="animation-duration: 4s;">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 bg-sky-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-rocket text-primary-blue text-sm"></i>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-700">Fast Learner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW: Scroll Indicator -->
+            <div class="scroll-indicator hidden md:block">
+                <div class="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center p-1">
+                    <div class="w-1.5 h-3 bg-slate-400 rounded-full animate-bounce"></div>
+                </div>
+            </div>
+
+            <!-- NEW: Wave Separator -->
+            <div class="wave-separator">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- NEW: Experience Overview Section -->
+        <section class="py-20 bg-white relative overflow-hidden">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold uppercase text-slate-800 relative inline-block">
+                        Professional Journey
+                        <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-blue rounded-full"></span>
+                    </h2>
+                    <p class="mt-4 text-slate-600 max-w-2xl mx-auto">Building scalable solutions and crafting digital experiences</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Current Position Card -->
+                    <div class="experience-card p-8 rounded-2xl shadow-lg relative overflow-hidden group spotlight">
+                        <div class="ribbon"><span>Current</span></div>
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-100 to-blue-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-800">Full Stack Developer</h3>
+                                    <p class="text-primary-blue font-semibold">Lebeda Marcom & Creative Studio</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-2 mb-4 text-sm text-slate-500">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Dec 2025 – Present</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold ml-2">Active</span>
+                            </div>
+
+                            <p class="text-slate-600 mb-4">Leading development of enterprise HRMS solutions with focus on automation and scalability.</p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-sky-50 text-sky-700 rounded-full text-xs font-medium border border-sky-200">React</span>
+                                <span class="px-3 py-1 bg-sky-50 text-sky-700 rounded-full text-xs font-medium border border-sky-200">Node.js</span>
+                                <span class="px-3 py-1 bg-sky-50 text-sky-700 rounded-full text-xs font-medium border border-sky-200">Mern Stack</span>
+                                <span class="px-3 py-1 bg-sky-50 text-sky-700 rounded-full text-xs font-medium border border-sky-200">HRMS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Previous Position Card -->
+                    <div class="experience-card p-8 rounded-2xl shadow-lg relative overflow-hidden group spotlight">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-800">Software Engineer</h3>
+                                    <p class="text-primary-blue font-semibold">Neuralgarage Pvt Ltd</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-2 mb-4 text-sm text-slate-500">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>April 2024 – May 2025</span>
+                            </div>
+
+                            <p class="text-slate-600 mb-4">Developed high-performance web applications and optimized database schemas for AI-driven products.</p>
+
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-200">React</span>
+                                <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-200">MongoDB</span>
+                                <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-medium border border-purple-200">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Achievement Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+                    <div class="bg-sky-50 p-6 rounded-2xl text-center hover-lift">
+                        <div class="text-3xl font-bold text-primary-blue mb-1">5+</div>
+                        <div class="text-sm text-slate-600">Major Projects</div>
+                    </div>
+                    <div class="bg-sky-50 p-6 rounded-2xl text-center hover-lift">
+                        <div class="text-3xl font-bold text-primary-blue mb-1">100%</div>
+                        <div class="text-sm text-slate-600">Client Satisfaction</div>
+                    </div>
+                    <div class="bg-sky-50 p-6 rounded-2xl text-center hover-lift">
+                        <div class="text-3xl font-bold text-primary-blue mb-1">24/7</div>
+                        <div class="text-sm text-slate-600">Support</div>
+                    </div>
+                    <div class="bg-sky-50 p-6 rounded-2xl text-center hover-lift">
+                        <div class="text-3xl font-bold text-primary-blue mb-1">2+</div>
+                        <div class="text-sm text-slate-600">Years Experience</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- About Me Section -->
-        <section id="about" class="py-24 bg-white">
+        <section id="about" class="py-24 bg-sky-50 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold uppercase text-slate-800 relative inline-block">
@@ -242,18 +1689,29 @@
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     
                     <div class="md-hide fade-right relative group">
-                        <div class="absolute -inset-2 bg-gradient-to-r from-sky-400 to-blue-500 rounded-xl opacity-20 group-hover:opacity-40 blur transition duration-500"></div>
-                        <img class="relative w-full h-auto rounded-xl shadow-lg border border-gray-100" 
-                             src="myphoto.jpg" 
-                             alt="Ashwin My Photo"
-                             onerror="this.onerror=null; this.src='https://placehold.co/500x700/f1f5f9/334155?text=Profile+Image'"
-                        >
+                        <div class="absolute -inset-4 bg-gradient-to-r from-sky-400 to-blue-500 rounded-2xl opacity-20 group-hover:opacity-40 blur-xl transition duration-500"></div>
+                        <div class="relative overflow-hidden rounded-2xl shadow-2xl img-reveal">
+                            <img class="relative w-full h-auto transform group-hover:scale-105 transition duration-700" 
+                                 src="myphoto.jpg" 
+                                 alt="Ashwin My Photo"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/500x700/f1f5f9/334155?text=Profile+Image'"
+                            >
+                            <!-- NEW: Overlay Info -->
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition duration-300">
+                                <p class="text-white font-semibold">Ashwin Raja M</p>
+                                <p class="text-sky-300 text-sm">Full Stack Developer</p>
+                            </div>
+                        </div>
+                        
+                        <!-- NEW: Decorative Frame -->
+                        <div class="absolute -bottom-4 -right-4 w-full h-full border-4 border-sky-200 rounded-2xl -z-10"></div>
                     </div>
                     
                     <div class="fade-left space-y-6">
-                        <div class="bg-sky-50 p-6 rounded-2xl border border-sky-100">
+                        <div class="bg-white p-8 rounded-2xl border border-sky-100 shadow-lg hover-lift relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 to-blue-500"></div>
                             <p class="text-slate-600 leading-relaxed text-lg mb-4">
-                                Hello, I'm <span class="text-primary-blue font-bold">Ashwin Raja M</span>, from Annur. As a recent graduate with a <span class="font-semibold text-slate-800">[BE]</span>, I am eager to start my career and believe that opportunities in Full Stack Development align perfectly with my goals.
+                                Hello, I'm <span class="text-primary-blue font-bold text-xl">Ashwin Raja M</span>, from Annur. As a recent graduate with a <span class="font-semibold text-slate-800 bg-sky-100 px-2 py-1 rounded">BE</span>, I am eager to start my career and believe that opportunities in Full Stack Development align perfectly with my goals.
                             </p>
                             <p class="text-slate-600 leading-relaxed text-lg mb-4">
                                 During my academic years, I developed a strong foundation in various technical skills. My experience in multiple projects has taught me the importance of teamwork, clear communication, and efficient time management.
@@ -261,35 +1719,50 @@
                             <p class="text-slate-600 leading-relaxed text-lg">
                                 I am a highly motivated and dedicated individual, ready to thrive in a challenging and dynamic work environment.
                             </p>
+                            
+                            <!-- NEW: Signature -->
+                            <div class="mt-6 pt-6 border-t border-slate-100">
+                                <p class="font-handwriting text-2xl text-slate-400 italic">Ashwin Raja M</p>
+                            </div>
                         </div>
                         
-                        <h3 class="text-2xl font-bold pt-4 text-slate-800">Education Journey</h3>
+                        <h3 class="text-2xl font-bold pt-4 text-slate-800 flex items-center gap-2">
+                            <i class="fas fa-graduation-cap text-primary-blue"></i>
+                            Education Journey
+                        </h3>
                         <div class="space-y-6">
-                            <div class="fade-right2 flex gap-4 items-start">
-                                <div class="mt-1 min-w-[3rem] h-12 bg-sky-100 rounded-full flex items-center justify-center text-primary-blue">
-                                    <i class="fas fa-university"></i>
+                            <div class="fade-right2 flex gap-4 items-start group hover-lift p-4 rounded-xl hover:bg-white transition-colors">
+                                <div class="mt-1 min-w-[3.5rem] h-14 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-university text-xl"></i>
                                 </div>
-                                <div>
-                                    <h5 class="text-lg font-bold text-slate-800">Bannari Amman Institute of Technology</h5>
+                                <div class="flex-1">
+                                    <h5 class="text-lg font-bold text-slate-800 group-hover:text-primary-blue transition-colors">Bannari Amman Institute of Technology</h5>
                                     <p class="text-slate-500 text-sm">2023 | Bachelor of Engineering (BE)</p>
+                                    <div class="mt-2 flex gap-2">
+                                        <span class="text-xs px-2 py-1 bg-sky-100 text-sky-700 rounded">Computer Science</span>
+                                        <span class="text-xs px-2 py-1 bg-green-100 text-green-700 rounded">Completed</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="fade-right1 flex gap-4 items-start">
-                                <div class="mt-1 min-w-[3rem] h-12 bg-sky-100 rounded-full flex items-center justify-center text-primary-blue">
-                                    <i class="fas fa-school"></i>
+                            <div class="fade-right1 flex gap-4 items-start group hover-lift p-4 rounded-xl hover:bg-white transition-colors">
+                                <div class="mt-1 min-w-[3.5rem] h-14 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-school text-xl"></i>
                                 </div>
-                                <div>
-                                    <h5 class="text-lg font-bold text-slate-800">MRS Matric Hr. Sec School</h5>
+                                <div class="flex-1">
+                                    <h5 class="text-lg font-bold text-slate-800 group-hover:text-primary-blue transition-colors">MRS Matric Hr. Sec School</h5>
                                     <p class="text-slate-500 text-sm">2019 | 12th Grade</p>
                                 </div>
                             </div>
-                            <div class="fade-right2 flex gap-4 items-start">
-                                <div class="mt-1 min-w-[3rem] h-12 bg-sky-100 rounded-full flex items-center justify-center text-primary-blue">
-                                    <i class="fas fa-code"></i>
+                            <div class="fade-right2 flex gap-4 items-start group hover-lift p-4 rounded-xl hover:bg-white transition-colors">
+                                <div class="mt-1 min-w-[3.5rem] h-14 bg-gradient-to-br from-green-400 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fas fa-code text-xl"></i>
                                 </div>
-                                <div>
-                                    <h5 class="text-lg font-bold text-slate-800">Greens Technology</h5>
+                                <div class="flex-1">
+                                    <h5 class="text-lg font-bold text-slate-800 group-hover:text-primary-blue transition-colors">Greens Technology</h5>
                                     <p class="text-slate-500 text-sm">2023 | Full Stack Developer Certification</p>
+                                    <div class="mt-2">
+                                        <span class="text-xs px-2 py-1 bg-orange-100 text-orange-700 rounded">Certified</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -298,71 +1771,151 @@
             </div>
         </section>
 
-        <!-- Work Experience Section -->
-          <section id="experience" class="py-16 md:py-24 bg-sky-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold uppercase text-slate-800 relative inline-block">
-                    Work Experience
-                    <!-- Decorative underline -->
-                    <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-blue rounded-full"></span>
-                </h2>
-            </div>
+        <!-- Work Experience Section - NEW ANIMATED DESIGN -->
+        <section id="experience" class="py-24 bg-gradient-to-b from-white to-sky-50 relative overflow-hidden">
+            <!-- NEW: Background Pattern -->
+            <div class="absolute inset-0 bg-grid opacity-30"></div>
 
-            <div class="flex justify-center">
-                <div class="w-full lg:w-3/4">
-                    <div class="relative pl-8 border-l-2 border-sky-200">
-                        
-                        <!-- Experience Entry 1 -->
-                        <div class="absolute -left-[11px] top-0 w-6 h-6 bg-white border-4 border-primary-blue rounded-full"></div>
-                        
-                        <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 transition duration-300 hover:shadow-2xl mb-12">
-                            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
-                                <div>
-                                    <h3 class="text-xl md:text-2xl font-bold ">Software Engineer</h3>
-                                    
-                                    <!-- LINK UPDATED HERE to https://visualdub.ai/ -->
-                                    <h4 class="text-lg md:text-xl font-semibold  mt-1 text-primary-blue flex items-center">
-                                        <a 
-                                            href="https://visualdub.ai/" 
-                                            target="_blank"
-                                            aria-label="Visit Neuralgarage Pvt Ltd website"
-                                        >
-                                            Neuralgarage Pvt Ltd
-                                        </a>
-                                        <!-- External Link Icon (SVG) -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 text-primary-blue flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                    </h4>
-                                </div>
-                                <span class="inline-block mt-3 md:mt-0 px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold whitespace-nowrap">
-                                    April 2024 - May 2025
-                                </span>
-                            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold uppercase text-slate-800 relative inline-block">
+                        Work Experience
+                        <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-blue rounded-full"></span>
+                    </h2>
+                    <p class="mt-4 text-slate-600 max-w-2xl mx-auto">My professional journey building scalable applications and solving complex problems</p>
+                </div>
+
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-sky-200 via-sky-400 to-sky-200 rounded-full"></div>
+
+                    <!-- Experience 1: Lebeda Marcom -->
+                    <div class="mb-16 relative fade-right experience-timeline-item">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <!-- Left Side: Empty for timeline -->
+                            <div class="hidden md:block"></div>
                             
-                            <ul class="space-y-3">
-                                <li class="flex items-start text-slate-600 text-base"><i class="fas fa-check-circle mr-3 mt-1 text-primary-blue flex-shrink-0"></i><span>Developed responsive and dynamic web applications using React and Tailwind CSS.</span></li>
-                                <li class="flex items-start text-slate-600 text-base"><i class="fas fa-check-circle mr-3 mt-1 text-primary-blue flex-shrink-0"></i><span>Built RESTful APIs and server-side logic using Node.js and Express.js.</span></li>
-                                <li class="flex items-start text-slate-600 text-base"><i class="fas fa-check-circle mr-3 mt-1 text-primary-blue flex-shrink-0"></i><span>Designed and managed NoSQL databases using MongoDB with Mongoose.</span></li>
-                                <li class="flex items-start text-slate-600 text-base"><i class="fas fa-check-circle mr-3 mt-1 text-primary-blue flex-shrink-0"></i><span>Integrated frontend with backend services for smooth real-time updates.</span></li>
-                                <li class="flex items-start text-slate-600 text-base"><i class="fas fa-check-circle mr-3 mt-1 text-primary-blue flex-shrink-0"></i><span>Collaborated in agile development teams using Git for version control.</span></li>
-                                <li class="flex items-start text-slate-600 text-base"><i class="fas fa-check-circle mr-3 mt-1 text-primary-blue flex-shrink-0"></i><span>Worked on CRUD operations, authentication systems, and form validation.</span></li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Placeholder for next entry -->
-                        <div class="absolute -left-[11px] top-[calc(100%-24px)] w-6 h-6 bg-white border-4 border-gray-300 rounded-full opacity-0"></div>
+                            <!-- Timeline Dot -->
+                            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white border-4 border-primary-blue rounded-full timeline-dot z-10 items-center justify-center shadow-lg">
+                                <div class="w-3 h-3 bg-primary-blue rounded-full"></div>
+                            </div>
 
+                            <!-- Right Side: Content -->
+                            <div class="md:pl-12">
+                                <div class="experience-card p-8 rounded-2xl shadow-lg relative overflow-hidden group">
+                                    <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-sky-100 to-blue-100 rounded-full -mr-20 -mt-20 opacity-50 group-hover:scale-150 transition-transform duration-700"></div>
+                                    
+                                    <div class="relative z-10">
+                                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                                            <div>
+                                                <h3 class="text-2xl font-bold text-slate-800 group-hover:text-primary-blue transition-colors">Full Stack Developer</h3>
+                                                <a href="#" class="text-lg font-semibold text-primary-blue hover:underline flex items-center gap-2 mt-1 group/link">
+                                                    Lebeda Marcom & Creative Studio
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                            <span class="mt-2 sm:mt-0 px-4 py-1 bg-gradient-to-r from-sky-100 to-blue-100 text-sky-700 rounded-full text-sm font-semibold whitespace-nowrap border border-sky-200">
+                                                Dec 2025 – Present
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">React</span>
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">Node.js</span>
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">HRMS</span>
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">Payroll</span>
+                                        </div>
+
+                                        <ul class="space-y-3 text-slate-600">
+                                            <li class="achievement-item group/item">
+                                                <span class="group-hover/item:text-primary-blue transition-colors">HRMS Engineering: Built an end-to-end Employee Management System featuring secure authentication and real-time attendance tracking.</span>
+                                            </li>
+                                            <li class="achievement-item group/item">
+                                                <span class="group-hover/item:text-primary-blue transition-colors">Workflow Automation: Developed a custom Leave Management module with automated approval triggers, eliminating manual paperwork.</span>
+                                            </li>
+                                            <li class="achievement-item group/item">
+                                                <span class="group-hover/item:text-primary-blue transition-colors">Payroll Engine: Architected a salary management system that automated payroll calculations based on real-time attendance and break-timing data.</span>
+                                            </li>
+                                            <li class="achievement-item group/item">
+                                                <span class="group-hover/item:text-primary-blue transition-colors">Performance Tuning: Refactored the Post N Toast website architecture, resolving backend bottlenecks to improve site stability.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: Neuralgarage -->
+                    <div class="relative fade-left experience-timeline-item">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <!-- Left Side: Content -->
+                            <div class="md:pr-12 md:text-right">
+                                <div class="experience-card p-8 rounded-2xl shadow-lg relative overflow-hidden group">
+                                    <div class="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full -ml-20 -mt-20 opacity-50 group-hover:scale-150 transition-transform duration-700"></div>
+                                    
+                                    <div class="relative z-10">
+                                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 md:flex-row-reverse">
+                                            <div class="md:text-right">
+                                                <h3 class="text-2xl font-bold text-slate-800 group-hover:text-primary-blue transition-colors">Software Engineer</h3>
+                                                <a href="https://visualdub.ai/" target="_blank" class="text-lg font-semibold text-primary-blue hover:underline flex items-center gap-2 mt-1 md:justify-end group/link">
+                                                    Neuralgarage Pvt Ltd
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                            <span class="mt-2 sm:mt-0 px-4 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-sm font-semibold whitespace-nowrap md:mr-4 border border-purple-200">
+                                                April 2024 – May 2025
+                                            </span>
+                                        </div>
+
+                                        <div class="flex flex-wrap gap-2 mb-4 md:justify-end">
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">React</span>
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">Tailwind CSS</span>
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">Node.js</span>
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">MongoDB</span>
+                                            <span class="skill-tag px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium cursor-pointer hover:shadow-md">CI/CD</span>
+                                        </div>
+
+                                        <ul class="space-y-3 text-slate-600 md:text-right">
+                                            <li class="achievement-item md:achievement-item-right group/item">
+                                                <span class="group-hover/item:text-primary-blue transition-colors">Dynamic UI Development: Engineered high-performance web applications using React and Tailwind CSS, achieving 100% cross-device compatibility.</span>
+                                            </li>
+                                            <li class="achievement-item md:achievement-item-right group/item">
+                                                <span class="group-hover/item:text-primary-blue transition-colors">Backend Scaling: Developed robust RESTful APIs and server-side logic with Node.js to handle high-traffic data loads efficiently.</span>
+                                            </li>
+                                            <li class="achievement-item md:achievement-item-right group/item">
+                                                <span class="group-hover/item:text-primary-blue transition-colors">Database Optimization: Designed NoSQL schemas using MongoDB, reducing query latency and ensuring data integrity.</span>
+                                            </li>
+                                            <li class="achievement-item md:achievement-item-right group/item">
+                                                <span class="group-hover/item:text-primary-blue transition-colors">DevOps: Automated deployment workflows via CI/CD pipelines, cutting manual release time by 30%.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Dot -->
+                            <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-white border-4 border-primary-blue rounded-full timeline-dot z-10 items-center justify-center shadow-lg">
+                                <div class="w-3 h-3 bg-primary-blue rounded-full"></div>
+                            </div>
+
+                            <!-- Right Side: Empty for timeline -->
+                            <div class="hidden md:block"></div>
+                        </div>
                     </div>
                 </div>
+
+               
             </div>
-        </div>
-    </section>
+        </section>
 
         <!-- Skills Section -->
-        <section id="skill" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="skill" class="py-24 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold uppercase text-slate-800 relative inline-block">
                         Skills & Expertise
@@ -372,215 +1925,377 @@
 
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     
-                    <div class="fade-right">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- Skill Items as Cards -->
-                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:border-sky-300 hover:bg-sky-50 transition-colors fade-right1">
-                                <h4 class="font-bold text-slate-800 mb-1">Frontend</h4>
-                                <p class="text-sm text-slate-600">HTML, CSS, JS, React, Bootstrap, Tailwind</p>
+                    <div class="fade-right space-y-6">
+                        <!-- NEW: Skill Categories with Progress Bars -->
+                        <div class="space-y-6">
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-sky-300 transition-all hover:shadow-lg group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <h4 class="font-bold text-slate-800 flex items-center gap-2">
+                                        <i class="fas fa-laptop-code text-primary-blue"></i>
+                                        Frontend Development
+                                    </h4>
+                                    <span class="text-sm font-bold text-primary-blue">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                                </div>
+                                <p class="text-sm text-slate-500 mt-2">HTML, CSS, JS, React, Bootstrap, Tailwind</p>
                             </div>
-                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:border-sky-300 hover:bg-sky-50 transition-colors fade-right2">
-                                <h4 class="font-bold text-slate-800 mb-1">Backend</h4>
-                                <p class="text-sm text-slate-600">Java, C++, C, Node.js, Express.js</p>
+
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-sky-300 transition-all hover:shadow-lg group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <h4 class="font-bold text-slate-800 flex items-center gap-2">
+                                        <i class="fas fa-server text-primary-blue"></i>
+                                        Backend Development
+                                    </h4>
+                                    <span class="text-sm font-bold text-primary-blue">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                                </div>
+                                <p class="text-sm text-slate-500 mt-2">Java, C++, C, Node.js, Express.js</p>
                             </div>
-                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:border-sky-300 hover:bg-sky-50 transition-colors fade-right3">
-                                <h4 class="font-bold text-slate-800 mb-1">Database</h4>
-                                <p class="text-sm text-slate-600">MySQL, MongoDB</p>
+
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-sky-300 transition-all hover:shadow-lg group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <h4 class="font-bold text-slate-800 flex items-center gap-2">
+                                        <i class="fas fa-database text-primary-blue"></i>
+                                        Database Management
+                                    </h4>
+                                    <span class="text-sm font-bold text-primary-blue">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%" data-width="80%"></div>
+                                </div>
+                                <p class="text-sm text-slate-500 mt-2">MySQL, MongoDB</p>
                             </div>
-                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100 hover:border-sky-300 hover:bg-sky-50 transition-colors fade-right4">
-                                <h4 class="font-bold text-slate-800 mb-1">Tools & Hosting</h4>
-                                <p class="text-sm text-slate-600">GitHub, PHP/XAMPP, Web Hosting</p>
+
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:border-sky-300 transition-all hover:shadow-lg group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <h4 class="font-bold text-slate-800 flex items-center gap-2">
+                                        <i class="fas fa-tools text-primary-blue"></i>
+                                        Tools & DevOps
+                                    </h4>
+                                    <span class="text-sm font-bold text-primary-blue">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 0%" data-width="75%"></div>
+                                </div>
+                                <p class="text-sm text-slate-500 mt-2">GitHub, PHP/XAMPP, Web Hosting, CI/CD</p>
                             </div>
                         </div>
                         
-                        <div class="mt-8 space-y-3 text-slate-600 fade-right5">
-                            <p class="flex items-center"><i class="fas fa-check text-sky-500 mr-2"></i> Capable of building and hosting static/dynamic websites.</p>
-                            <p class="flex items-center"><i class="fas fa-check text-sky-500 mr-2"></i> Proficient in Core Java and OOP concepts.</p>
-                            <p class="flex items-center"><i class="fas fa-check text-sky-500 mr-2"></i> Experience creating UI/UX with Bootstrap/Tailwind.</p>
+                        <div class="mt-8 space-y-3 text-slate-600 bg-sky-50 p-6 rounded-2xl border border-sky-100">
+                            <p class="flex items-center gap-3 p-2 rounded-lg hover:bg-white transition-colors">
+                                <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                Capable of building and hosting static/dynamic websites.
+                            </p>
+                            <p class="flex items-center gap-3 p-2 rounded-lg hover:bg-white transition-colors">
+                                <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                Proficient in Core Java and OOP concepts.
+                            </p>
+                            <p class="flex items-center gap-3 p-2 rounded-lg hover:bg-white transition-colors">
+                                <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                    <i class="fas fa-check text-sm"></i>
+                                </span>
+                                Experience creating UI/UX with Bootstrap/Tailwind.
+                            </p>
                         </div>
                     </div>
 
-                    <div class="md-hide fade-left flex justify-center">
-                        <img class="w-full h-auto max-w-md rounded-xl shadow-lg" 
-                             src="skills1.webp" 
-                             alt="Skills Graphic"
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/f0f9ff/0ea5e9?text=Skills'"
-                        >
+                    <div class="md-hide fade-left flex justify-center relative">
+                        <!-- NEW: Interactive Skill Visualization -->
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-sky-200 to-blue-200 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                            <img class="w-full h-auto max-w-md rounded-2xl shadow-2xl relative z-10" 
+                                 src="skills1.webp" 
+                                 alt="Skills Graphic"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/f0f9ff/0ea5e9?text=Skills'"
+                            >
+                            
+                            <!-- NEW: Floating Skill Icons -->
+                            <div class="absolute -top-4 -left-4 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center text-2xl text-orange-500 animate-bounce" style="animation-duration: 3s;">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="absolute top-1/4 -right-8 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center text-2xl text-blue-500 animate-bounce" style="animation-duration: 4s;">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="absolute bottom-1/4 -left-8 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center text-2xl text-yellow-400 animate-bounce" style="animation-duration: 5s;">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="absolute -bottom-4 right-1/4 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center text-2xl text-sky-500 animate-bounce" style="animation-duration: 3.5s;">
+                                <i class="fab fa-react"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Tech Stack Grid -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-center text-slate-800 mb-8">Technologies I Work With</h3>
+                    <div class="tech-grid max-w-3xl mx-auto">
+                        <div class="tech-item tooltip" data-tooltip="HTML5">
+                            <i class="fab fa-html5 text-3xl text-orange-500 mb-2"></i>
+                            <span class="text-xs font-medium text-slate-600">HTML5</span>
+                        </div>
+                        <div class="tech-item tooltip" data-tooltip="CSS3">
+                            <i class="fab fa-css3-alt text-3xl text-blue-500 mb-2"></i>
+                            <span class="text-xs font-medium text-slate-600">CSS3</span>
+                        </div>
+                        <div class="tech-item tooltip" data-tooltip="JavaScript">
+                            <i class="fab fa-js text-3xl text-yellow-400 mb-2"></i>
+                            <span class="text-xs font-medium text-slate-600">JavaScript</span>
+                        </div>
+                        <div class="tech-item tooltip" data-tooltip="React">
+                            <i class="fab fa-react text-3xl text-sky-500 mb-2"></i>
+                            <span class="text-xs font-medium text-slate-600">React</span>
+                        </div>
+                        <div class="tech-item tooltip" data-tooltip="Node.js">
+                            <i class="fab fa-node-js text-3xl text-green-500 mb-2"></i>
+                            <span class="text-xs font-medium text-slate-600">Node.js</span>
+                        </div>
+                        <div class="tech-item tooltip" data-tooltip="Git">
+                            <i class="fab fa-git-alt text-3xl text-red-500 mb-2"></i>
+                            <span class="text-xs font-medium text-slate-600">Git</span>
+                        </div>
+                        <div class="tech-item tooltip" data-tooltip="Bootstrap">
+                            <i class="fab fa-bootstrap text-3xl text-purple-500 mb-2"></i>
+                            <span class="text-xs font-medium text-slate-600">Bootstrap</span>
+                        </div>
+                        <div class="tech-item tooltip" data-tooltip="Java">
+                            <i class="fab fa-java text-3xl text-red-600 mb-2"></i>
+                            <span class="text-xs font-medium text-slate-600">Java</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="project" class="py-24 bg-sky-50">
+        <section id="project" class="py-24 bg-sky-50 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold uppercase text-slate-800 relative inline-block">
                         My Work
                         <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-blue rounded-full"></span>
                     </h2>
+                    <p class="mt-4 text-slate-600">Showcasing my recent projects and applications</p>
                 </div>
             
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="imageRow">
                     
                     <!-- Project 1 -->
-                    <div class="con fade-right bg-white">
-                        <img src="s2.jpg" alt="Live Stock Portfolio" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">Live Stock Portfolio</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">React Application</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/Frigga_task" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://amazing-rabanadas-60cf55.netlify.app/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                    <div class="con fade-right bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="s2.jpg" alt="Live Stock Portfolio" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">Live Stock Portfolio</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">React Application</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/Frigga_task" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://amazing-rabanadas-60cf55.netlify.app/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="con fade-right bg-white">
-                        <img src="em.jpg" alt="Event Management" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">Event Management</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Management System</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/Event-management" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://eventmanagement111.netlify.app/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                    <div class="con fade-right bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="em.jpg" alt="Event Management" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">Event Management</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Management System</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/Event-management" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://eventmanagement111.netlify.app/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
           
                     <!-- Project 3 -->
-                     <div class="con  fade-right bg-white">
-                        <img src="pj6.jpg" alt="Trands" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">CURD</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Curd and Jwt</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/harvee_task_1" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                    <div class="con fade-right bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="pj6.jpg" alt="Trands" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">CURD</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Curd and Jwt</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/harvee_task_1" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    
 
                     <!-- Hidden Projects -->
-                    <div class="con project-hidden fade-right bg-white">
-                        <img src="pj1.jpeg" alt="Trands" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">Trands</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">E-commerce</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/e-commerce" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://axsvin.github.io/e-commerce/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                    <div class="con project-hidden fade-right bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="pj1.jpeg" alt="Trands" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">Trands</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">E-commerce</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/e-commerce" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://axsvin.github.io/e-commerce/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
-                    <div class="con project-hidden fade-left bg-white">
-                        <img src="pj2.jpeg" alt="Interior Design" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">Interior Design</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Design Website</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://www.linkedin.com/posts/ashwin-raja-m-6baa351a8_hello-i-recently-finished-the-work-of-developing-activity-7121810499406594048-KIWQ?utm_source=share&utm_medium=member_desktop" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/homedesign" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://weldingshopzz.000webhostapp.com/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                    <div class="con project-hidden fade-left bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="pj2.jpeg" alt="Interior Design" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">Interior Design</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Design Website</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://www.linkedin.com/posts/ashwin-raja-m-6baa351a8_hello-i-recently-finished-the-work-of-developing-activity-7121810499406594048-KIWQ?utm_source=share&utm_medium=member_desktop" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/homedesign" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://weldingshopzz.000webhostapp.com/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    
-
-                    <div class="con project-hidden fade-right bg-white">
-                        <img src="pj3.jpeg" alt="Car Service" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">Skillskapes</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Car Service Center</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/car_service" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://skillskapes.000webhostapp.com/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                    <div class="con project-hidden fade-right bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="pj3.jpeg" alt="Car Service" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">Skillskapes</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Car Service Center</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/car_service" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://skillskapes.000webhostapp.com/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="con project-hidden fade-left bg-white">
-                        <img src="pj5.jpeg" alt="Scalex" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">Scalex</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Company Design</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/scalex-assignment" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://axsvin.github.io/scalex-assignment/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
-                                </div>
+                    <div class="con project-hidden fade-left bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="pj5.jpeg" alt="Scalex" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="con project-hidden fade-left bg-white">
-                        <img src="qq (1).jpeg" alt="Portfolio" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">Portfolio</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Task Portfolio</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/mowli" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://axsvin.github.io/mowli/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="con project-hidden fade-left bg-white">
-                        <img src="qq (2).jpeg" alt="Magnion" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">Magnion</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Company Task</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/helxaa" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://axsvin.github.io/helxaa/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="con project-hidden fade-left bg-white">
-                        <img src="i.jpeg" alt="NPL" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">NPL</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Company Task</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/Neuralgarage" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://axsvin.github.io/Neuralgarage/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">Scalex</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Company Design</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/scalex-assignment" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://axsvin.github.io/scalex-assignment/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="con project-hidden fade-right bg-white">
-                        <img src="as.jpeg" alt="My Portfolio" class="w-full h-48 object-cover">
-                        <div class="overlay">
-                            <div class="text">
-                                <h3 class="text-xl font-bold mb-1 text-slate-900">My Portfolio</h3>
-                                <h4 class="text-sm font-medium mb-4 text-primary-blue">Old Version</h4>
-                                <div class="flex justify-center space-x-4">
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://github.com/AXSVIN/My-Portfolio" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                                    <a class="text-slate-800 hover:text-primary-blue transition duration-300" href="https://axsvin.github.io/My-Portfolio/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                    <div class="con project-hidden fade-left bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="qq (1).jpeg" alt="Portfolio" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">Portfolio</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Task Portfolio</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/mowli" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://axsvin.github.io/mowli/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="con project-hidden fade-left bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="qq (2).jpeg" alt="Magnion" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">Magnion</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Company Task</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/helxaa" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://axsvin.github.io/helxaa/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="con project-hidden fade-left bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="i.jpeg" alt="NPL" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">NPL</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Company Task</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/Neuralgarage" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://axsvin.github.io/Neuralgarage/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="con project-hidden fade-right bg-white project-3d group" onmousemove="handleTilt(event, this)" onmouseleave="resetTilt(this)">
+                        <div class="project-3d-content">
+                            <div class="relative overflow-hidden">
+                                <img src="as.jpeg" alt="My Portfolio" class="w-full h-48 object-cover transition duration-500 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3 class="text-xl font-bold mb-1 text-slate-900">My Portfolio</h3>
+                                    <h4 class="text-sm font-medium mb-4 text-primary-blue">Old Version</h4>
+                                    <div class="flex justify-center space-x-4">
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://github.com/AXSVIN/My-Portfolio" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                                        <a class="text-slate-800 hover:text-primary-blue transition duration-300 transform hover:scale-110" href="https://axsvin.github.io/My-Portfolio/" target="_blank"><i class="fas fa-external-link-alt fa-2x"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -590,46 +2305,78 @@
                 
                 <!-- See More Button -->
                 <div class="text-center mt-12" id="seeMore">
-                    <button class="btn-primary-custom py-3 px-8 rounded-full font-bold shadow-lg" onclick="toggleSeeMore()">See More Projects</button>
+                    <button class="btn-primary-custom py-3 px-8 rounded-full font-bold shadow-lg liquid-btn magnetic-area" onclick="toggleSeeMore()">
+                        <i class="fas fa-th-large mr-2"></i>See More Projects
+                    </button>
                 </div>
             </div>
         </section>
 
+    
 
         <!-- Contact Section -->
-        <section id="contact" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="contact" class="py-24 bg-gradient-to-b from-sky-50 to-white relative overflow-hidden">
+            <!-- NEW: Background Decoration -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div class="absolute top-20 left-10 w-64 h-64 bg-sky-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+                <div class="absolute top-40 right-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold uppercase text-slate-800 relative inline-block">
                         Get In Touch
                         <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-blue rounded-full"></span>
                     </h2>
+                    <p class="mt-4 text-slate-600">Let's discuss your next project</p>
                 </div>
                 
                 <div class="grid lg:grid-cols-2 gap-12">
                     
                     <!-- Contact Form -->
-                    <div class="fade-right p-8 rounded-2xl bg-white border border-gray-100 shadow-xl">
-                        <h3 class="text-2xl font-bold text-slate-800 text-center mb-6">Send a Message</h3>
+                    <div class="fade-right p-8 rounded-2xl bg-white border border-gray-100 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 to-blue-500"></div>
+                        
+                        <h3 class="text-2xl font-bold text-slate-800 text-center mb-2">Send a Message</h3>
+                        <p class="text-center text-slate-500 text-sm mb-6">I'll get back to you within 24 hours</p>
+                        
                         <div id="msg-box" class="text-center mb-4 text-green-600 font-bold" style="min-height: 1.5rem;"></div>
 
-                        <form name="submit-to-google-sheet">
-                            <div class="mb-5">
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                                <input type="email" name="Email" class="w-full p-3 rounded-lg bg-sky-50 text-slate-800 border border-sky-100 focus:border-primary-blue focus:ring-2 focus:ring-sky-200 outline-none transition duration-300" placeholder="your@email.com" required="">
+                        <form name="submit-to-google-sheet" class="space-y-6">
+                            <div class="form-group">
+                                <input type="email" name="Email" class="form-input" placeholder=" " required="">
+                                <i class="fas fa-envelope form-icon"></i>
+                                <label class="form-label">Email Address</label>
                             </div>
-                            <div class="mb-5">
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                                <input type="tel" name="PhoneNumber" class="w-full p-3 rounded-lg bg-sky-50 text-slate-800 border border-sky-100 focus:border-primary-blue focus:ring-2 focus:ring-sky-200 outline-none transition duration-300" placeholder="+91 ..." required="">
+                            
+                            <div class="form-group">
+                                <input type="tel" name="PhoneNumber" class="form-input" placeholder=" " required="">
+                                <i class="fas fa-phone form-icon"></i>
+                                <label class="form-label">Phone Number</label>
                             </div>
-                            <div class="mb-6">
-                                <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                                <textarea name="Massage" class="w-full p-3 rounded-lg bg-sky-50 text-slate-800 border border-sky-100 focus:border-primary-blue focus:ring-2 focus:ring-sky-200 outline-none transition duration-300" rows="4" placeholder="How can I help you?" required=""></textarea>
+                            
+                            <div class="form-group">
+                                <textarea name="Massage" class="form-input" rows="4" placeholder=" " required="" style="padding-top: 1rem;"></textarea>
+                                <i class="fas fa-comment form-icon" style="top: 1.5rem;"></i>
+                                <label class="form-label">Your Message</label>
                             </div>
+                            
                             <div class="text-center">
-                                <button type="submit" class="btn-primary-custom py-3 px-10 rounded-full font-bold shadow-lg w-full sm:w-auto">Send Message</button>
+                                <button type="submit" class="btn-primary-custom py-3 px-10 rounded-full font-bold shadow-lg w-full sm:w-auto liquid-btn magnetic-area group">
+                                    <span class="group-hover:mr-2 transition-all">Send Message</span>
+                                    <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                                </button>
                             </div>
                         </form>
+
+                        <!-- NEW: Success Animation (Hidden by default) -->
+                        <div id="success-animation" class="hidden absolute inset-0 bg-white flex-col items-center justify-center">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            </svg>
+                            <h3 class="text-xl font-bold text-slate-800 mt-4">Message Sent!</h3>
+                        </div>
                     </div>
 
                     <!-- Contact Details -->
@@ -641,46 +2388,68 @@
                         </div>
                         
                         <div class="space-y-6">
-                            <a href="mailto:ashwinoffcl09@gmail.com" id="email-section" class="flex items-center p-4 bg-sky-50 rounded-xl hover:bg-sky-100 transition-colors group fade-right2">
-                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary-blue shadow-sm group-hover:scale-110 transition-transform">
-                                    <i class="fa fa-envelope text-xl"></i>
+                            <a href="mailto:ashwinoffcl09@gmail.com" id="email-section" class="flex items-center p-6 bg-white rounded-2xl hover:bg-sky-50 transition-all group shadow-md hover:shadow-xl border border-gray-100 hover:border-sky-200 fade-right2 magnetic-area">
+                                <div class="w-14 h-14 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fa fa-envelope text-2xl"></i>
                                 </div>
                                 <div class="ml-4">
-                                    <p class="text-xs text-slate-500 uppercase font-semibold">Email</p>
-                                    <h5 class="text-lg font-medium text-slate-800">ashwinoffcl09@gmail.com</h5>
+                                    <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Email</p>
+                                    <h5 class="text-lg font-medium text-slate-800 group-hover:text-primary-blue transition-colors">ashwinoffcl09@gmail.com</h5>
+                                </div>
+                                <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="fas fa-arrow-right text-primary-blue"></i>
                                 </div>
                             </a>
                             
-                            <a href="tel:9677802107" id="phone" class="flex items-center p-4 bg-sky-50 rounded-xl hover:bg-sky-100 transition-colors group fade-right3">
-                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary-blue shadow-sm group-hover:scale-110 transition-transform">
-                                    <i class="fa fa-phone-alt text-xl"></i>
+                            <a href="tel:9677802107" id="phone" class="flex items-center p-6 bg-white rounded-2xl hover:bg-sky-50 transition-all group shadow-md hover:shadow-xl border border-gray-100 hover:border-sky-200 fade-right3 magnetic-area">
+                                <div class="w-14 h-14 bg-gradient-to-br from-green-400 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="fa fa-phone-alt text-2xl"></i>
                                 </div>
                                 <div class="ml-4">
-                                    <p class="text-xs text-slate-500 uppercase font-semibold">Phone</p>
-                                    <h5 class="text-lg font-medium text-slate-800">+91 96778 02107</h5>
+                                    <p class="text-xs text-slate-500 uppercase font-semibold tracking-wider">Phone</p>
+                                    <h5 class="text-lg font-medium text-slate-800 group-hover:text-primary-blue transition-colors">+91 96778 02107</h5>
+                                </div>
+                                <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i class="fas fa-arrow-right text-primary-blue"></i>
                                 </div>
                             </a>
+                        </div>
+                        
+                        <!-- NEW: Location Map Placeholder -->
+                        <div class="map-container h-48 rounded-2xl relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-gradient-to-br from-sky-100 to-blue-100"></div>
+                            <div class="map-dot" style="top: 40%; left: 45%;"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-map-marker-alt text-4xl text-primary-blue mb-2 animate-bounce"></i>
+                                    <p class="font-semibold text-slate-700">Annur, Tamil Nadu</p>
+                                    <p class="text-sm text-slate-500">India</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-white/90 p-3 text-center transform translate-y-full group-hover:translate-y-0 transition-transform">
+                                <span class="text-sm font-medium text-slate-600">Available for remote work worldwide</span>
+                            </div>
                         </div>
                         
                         <div class="grid grid-cols-3 gap-4 pt-4">
                             <!-- LinkedIn -->
                             <div class="text-center fade-right">
-                                <a class="block p-4 bg-white border border-gray-100 rounded-xl hover:border-primary-blue hover:shadow-md transition-all group" href="https://www.linkedin.com/in/ashwin-raja-m-6baa351a8/" target="_blank">
-                                    <i class="fab fa-linkedin text-3xl text-slate-400 group-hover:text-[#0077b5] mb-2 transition-colors"></i>
+                                <a class="block p-4 bg-white border border-gray-100 rounded-2xl hover:border-primary-blue hover:shadow-lg transition-all group magnetic-area" href="https://www.linkedin.com/in/ashwin-raja-m-6baa351a8/" target="_blank">
+                                    <i class="fab fa-linkedin text-3xl text-slate-400 group-hover:text-[#0077b5] mb-2 transition-colors transform group-hover:scale-110"></i>
                                     <p class="text-xs font-semibold text-slate-600">LinkedIn</p>
                                 </a>
                             </div>
                             <!-- Instagram -->
                             <div class="text-center fade-in">
-                                <a class="block p-4 bg-white border border-gray-100 rounded-xl hover:border-primary-blue hover:shadow-md transition-all group" href="https://instagram.com/axxsvin?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
-                                    <i class="fab fa-instagram text-3xl text-slate-400 group-hover:text-[#E1306C] mb-2 transition-colors"></i>
+                                <a class="block p-4 bg-white border border-gray-100 rounded-2xl hover:border-primary-blue hover:shadow-lg transition-all group magnetic-area" href="https://instagram.com/axxsvin?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+                                    <i class="fab fa-instagram text-3xl text-slate-400 group-hover:text-[#E1306C] mb-2 transition-colors transform group-hover:scale-110"></i>
                                     <p class="text-xs font-semibold text-slate-600">Instagram</p>
                                 </a>
                             </div>
                             <!-- WhatsApp -->
                             <div class="text-center fade-left">
-                                <a class="block p-4 bg-white border border-gray-100 rounded-xl hover:border-primary-blue hover:shadow-md transition-all group" href="https://wa.me/919677802107" target="_blank">
-                                    <i class="fab fa-whatsapp text-3xl text-slate-400 group-hover:text-[#25D366] mb-2 transition-colors"></i>
+                                <a class="block p-4 bg-white border border-gray-100 rounded-2xl hover:border-primary-blue hover:shadow-lg transition-all group magnetic-area" href="https://wa.me/919677802107" target="_blank">
+                                    <i class="fab fa-whatsapp text-3xl text-slate-400 group-hover:text-[#25D366] mb-2 transition-colors transform group-hover:scale-110"></i>
                                     <p class="text-xs font-semibold text-slate-600">WhatsApp</p>
                                 </a>
                             </div>
@@ -692,13 +2461,58 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <p class="text-slate-500 text-sm mb-4 md:mb-0">© 2024 Ashwin Raja M. All rights reserved.</p>
-            <a href="#home" class="btn-primary-custom w-10 h-10 flex items-center justify-center rounded-full shadow-md" aria-label="Back to top">
-                <i class="fas fa-arrow-up"></i>
-            </a>
+    <footer class="bg-slate-900 text-white py-12 relative overflow-hidden">
+        <!-- NEW: Footer Decoration -->
+        <div class="absolute inset-0 bg-gradient-to-r from-sky-900/20 to-blue-900/20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fas fa-code text-primary-blue"></i>
+                        Ashwin Raja M
+                    </h3>
+                    <p class="text-slate-400 text-sm">Full Stack Developer passionate about creating innovative web solutions.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#project" class="hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Your email" class="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-sm flex-1 focus:outline-none focus:border-primary-blue">
+                        <button class="bg-primary-blue hover:bg-sky-600 px-4 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm mb-4 md:mb-0">© 2024 Ashwin Raja M. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-blue transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-blue transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-blue transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+        
+        <a href="#home" class="btn-primary-custom w-12 h-12 flex items-center justify-center rounded-full shadow-lg fixed bottom-8 right-8 magnetic-area z-50" aria-label="Back to top" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
     
     <script>
@@ -716,6 +2530,20 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("active");
+                        
+                        // Animate skill bars
+                        if (entry.target.querySelector('.skill-progress')) {
+                            entry.target.querySelectorAll('.skill-progress').forEach(bar => {
+                                bar.style.width = bar.getAttribute('data-width');
+                            });
+                        }
+                        
+                        // Animate counters
+                        if (entry.target.querySelector('.stat-number')) {
+                            entry.target.querySelectorAll('.stat-number').forEach(counter => {
+                                animateCounter(counter);
+                            });
+                        }
                     }
                 });
             }, { threshold: 0.1 }); 
@@ -724,6 +2552,9 @@
             elementsToObserve.forEach(el => {
                 observer.observe(el);
             });
+
+            // Create particles
+            createParticles();
         });
 
         // 3. Typing Text Effect
@@ -761,6 +2592,9 @@
 
             const seeMoreButton = document.getElementById('seeMore');
             seeMoreButton.style.display = 'none';
+            
+            // Show toast
+            showToast('All projects loaded successfully!');
         }
         window.toggleSeeMore = toggleSeeMore;
 
@@ -793,10 +2627,20 @@
             fetchWithRetry(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(() => {
                     msg.innerHTML = "Message Sent Successfully";
+                    showToast('Message sent successfully!');
                     setTimeout(function(){
                         msg.innerHTML = "";
                     }, 5000);
                     form.reset();
+                    
+                    // Show success animation
+                    const successDiv = document.getElementById('success-animation');
+                    successDiv.classList.remove('hidden');
+                    successDiv.classList.add('flex');
+                    setTimeout(() => {
+                        successDiv.classList.add('hidden');
+                        successDiv.classList.remove('flex');
+                    }, 3000);
                 })
                 .catch(error => {
                     msg.innerHTML = "Error sending message. Please try again later.";
@@ -806,7 +2650,123 @@
                     }, 8000);
                 });
         });
+
+        // NEW: Counter Animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target + (target > 100 ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // NEW: Create Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // NEW: Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.querySelector('p').textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // NEW: 3D Tilt Effect for Projects
+        function handleTilt(e, card) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        }
+
+        function resetTilt(card) {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        }
+
+        // NEW: Magnetic Button Effect
+        document.querySelectorAll('.magnetic-area').forEach(btn => {
+            btn.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                this.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // NEW: Spotlight Effect
+        document.querySelectorAll('.spotlight').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                this.style.setProperty('--x', x + '%');
+                this.style.setProperty('--y', y + '%');
+            });
+        });
+
+        // NEW: Smooth Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // NEW: Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Add animation classes to stagger items
+        document.querySelectorAll('.stagger-item').forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
     </script>
 </body>
-
 </html>
